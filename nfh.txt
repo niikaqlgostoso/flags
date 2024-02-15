@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name         nfh
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.netflix.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=netflix.com
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    var display = 'block';
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "*") {
+            let videoControls = document.getElementsByClassName('watch-video--bottom-controls-container ltr-gpipej')[0];
+            display = display === 'block' ? 'none' : 'block';
+            videoControls.style.display = display;
+        }
+    })
+})();
